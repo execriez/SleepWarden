@@ -98,9 +98,13 @@ The uninstaller will uninstall the following files and directories:
 
 There's no need to reboot.
 
-After the uninstall everything goes back to normal, and primary network status changes will not be tracked.
+After the uninstall everything goes back to normal.
 
 ## History:
+
+1.0.4 - 11 OCT 2017
+
+* Fixed a few typos in the readme.
 
 1.0.4 - 10 OCT 2017
 
