@@ -1,9 +1,11 @@
 //
 //  main.m
 //  SleepWarden
+//  Version 1.0.5
 //
-//  Created by local on 28/09/2017.
-//  Copyright © 2017 Mark Swift. All rights reserved.
+//  Created on 28/09/2017.
+//  Updated on 28/09/2018
+//  Copyright (c) 2017 Mark J Swift. All rights reserved.
 //
 //  Mostly lifted from:
 //    Technical Q&A QA1340
@@ -33,7 +35,8 @@
     NSPipe* pipe = [NSPipe pipe];
     
     NSTask* task = [[NSTask alloc] init];
-    [task setLaunchPath: @"/bin/sh"];
+    [task setLaunchPath: @"/bin/bash"];
+    
     [task setArguments:@[@"-c", [NSString stringWithFormat:@"%@", self]]];
     [task setStandardOutput:pipe];
     
@@ -50,9 +53,9 @@ io_connect_t  root_port; // a reference to the Root Power Domain IOService
 void
 MySleepCallBack( void * refCon, io_service_t service, natural_t messageType, void * messageArgument )
 {
-
+    
     NSString        * exepath = [[NSBundle mainBundle] executablePath];
-
+    
     switch ( messageType )
     {
             
@@ -67,9 +70,9 @@ MySleepCallBack( void * refCon, io_service_t service, natural_t messageType, voi
              seconds then go to sleep.
              */
             
-            [[NSString stringWithFormat:@"%@-IdleSleep", exepath ] runAsCommand];
             NSLog(@"SystemIdleSleep");
-
+            [[NSString stringWithFormat:@"%@-IdleSleep", exepath ] runAsCommand];
+            
             //Uncomment to cancel idle sleep
             //IOCancelPowerChange( root_port, (long)messageArgument );
             // we will allow idle sleep
@@ -85,28 +88,28 @@ MySleepCallBack( void * refCon, io_service_t service, natural_t messageType, voi
              kIOReturnSuccess, however the system WILL still go to sleep.
              */
             
-            [[NSString stringWithFormat:@"%@-WillSleep", exepath ] runAsCommand];
             NSLog(@"SystemWillSleep");
-
+            [[NSString stringWithFormat:@"%@-WillSleep", exepath ] runAsCommand];
+            
             IOAllowPowerChange( root_port, (long)messageArgument );
             break;
             
         case kIOMessageSystemWillPowerOn:
             //System has started the wake up process...
             
-            [[NSString stringWithFormat:@"%@-WillWake", exepath ] runAsCommand];
             NSLog(@"SystemWillWake");
+            [[NSString stringWithFormat:@"%@-WillWake", exepath ] runAsCommand];
             break;
             
         case kIOMessageSystemHasPoweredOn:
             //System has finished waking up...
- 
-            [[NSString stringWithFormat:@"%@-HasWoken", exepath ] runAsCommand];
+            
             NSLog(@"SystemHasWoken");
+            [[NSString stringWithFormat:@"%@-HasWoken", exepath ] runAsCommand];
             break;
             
         default:
-            NSLog(@"Unknown message type: old %08lx", (long unsigned int)messageType);
+            NSLog(@"Unknown message type: %08lx", (long unsigned int)messageType);
             
             break;
             
@@ -130,7 +133,7 @@ int main( int argc, char **argv )
     if ( root_port == 0 )
     {
         NSLog(@"IORegisterForSystemPower failed\n");
-
+        
         printf("IORegisterForSystemPower failed\n");
         return 1;
     }

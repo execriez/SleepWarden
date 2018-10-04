@@ -1,106 +1,173 @@
 # SleepWarden
 ![Logo](images/SleepWarden.jpg "Logo")
 
-Run custom code when a MacOS system sleeps or wakes.
+Run custom code when the system sleeps or wakes on MacOS.
 
 ## Description:
 
-SleepWarden catches MacOS sleep and wake events, to allow you to run custom code.
+SleepWarden catches MacOS sleep events, to allow you to run custom code when the system sleeps or wakes.
 
-It consists of the following components:
+SleepWarden consists of the following components:
 
 	SleepWarden             - The main binary that catches the sleep and wake events
 	SleepWarden-IdleSleep   - Called when the system is about to sleep due to idleness
 	SleepWarden-WillSleep   - Called when the system has started to sleep
 	SleepWarden-WillWake    - Called when the system has started the wake up process
 	SleepWarden-HasWoken    - Called when the system has finished waking up
-
-The IdleSleep, WillSleep, WillWake and HasWoken example code are bash scripts.
-
-The example scripts simply use the "say" command to let you know when sleep and wake events are occuring. You should customise these scripts to your own needs.
-
-You should note that there is a 30 second delay between the very first sleep event (idle sleep, or sleep) and the system actually going to sleep - so you should aim at having all your scripts complete within this timeframe.
-
-### SleepWarden-IdleSleep:
-
-When an idle sleep event occurs, the 'SleepWarden-IdleSleep' script runs.
-
-During this script, all resources are still online as sleep has not actually started.
-
-You should note that the 'SleepWarden-IdleSleep' script is not called if you select 'Sleep' from the Apple menu.
-
-### SleepWarden-WillSleep:
-
-The 'SleepWarden-WillSleep' script runs at a sleep event, or immediately after the 'SleepWarden-IdleSleep' script finishes. 
-
-A sleep event might be selecting 'sleep' from the apple menu, or closing a laptop lid.
-
-During this script, resources may have already been taken offline. For example, sound will almost definately be offline - so you will not hear any output from the example 'say' command.
-
-### SleepWarden-WillWake:
-
-The 'SleepWarden-WillWake' script runs when the system is first waking up. Some resources such as networking may not be available during this event.
  
-### SleepWarden-HasWoken:
+SleepWarden-IdleSleep, SleepWarden-WillSleep, SleepWarden-WillWake and SleepWarden-HasWoken are bash scripts.
 
-The 'SleepWarden-HasWoken' script runs when the system has finished waking up. All resources should be available during this event.
- 
+These example scripts use the "say" command to speak whenever the system sleeps or wakes. You should customise the scripts to your own needs.
+
+
 ## How to install:
 
-Download the SleepWarden zip archive from <https://github.com/execriez/SleepWarden>, then unzip the archive on a Mac workstation.
-
-Ideally, to install - you should double-click the following installer package which can be found in the "SupportFiles" directory.
-
-	SleepWarden.pkg
-	
-If the installer package isn't available, you can run the command-line installer which can be found in the "util" directory:
-
-	sudo Install
+Download the SleepWarden installation package here [SleepWarden.pkg](https://raw.githubusercontent.com/execriez/SleepWarden/master/SupportFiles/SleepWarden.pkg)
 
 The installer will install the following files and directories:
 
 	/Library/LaunchDaemons/com.github.execriez.sleepwarden.plist
 	/usr/SleepWarden/
+	/usr/SleepWarden/bin/
+	/usr/SleepWarden/bin/SleepWarden
+	/usr/SleepWarden/bin/SleepWarden-IdleSleep
+	/usr/SleepWarden/bin/SleepWarden-WillSleep
+	/usr/SleepWarden/bin/SleepWarden-WillWake
+	/usr/SleepWarden/bin/SleepWarden-HasWoken
 
 There's no need to reboot.
 
-After installation, your computer will speak whenever a sleep event occurs.
+After installation, your computer will speak whenever there is a sleep event.
 
-You can alter the example shell scripts to alter this behavior, these can be found in the following location:
+If the installer fails you should check the installation logs.
+
+## Modifying the example scripts:
+
+After installation, four simple example scripts can be found in the following location:
 
 	/usr/SleepWarden/bin/SleepWarden-IdleSleep
 	/usr/SleepWarden/bin/SleepWarden-WillSleep
 	/usr/SleepWarden/bin/SleepWarden-WillWake
 	/usr/SleepWarden/bin/SleepWarden-HasWoken
 
-If the installer fails you should check the logs.
+These simple scripts use the "say" command to speak whenever the system sleeps or wakes. Modify the scripts to alter this default behaviour.
 
-## Logs:
+You should note that there is at most a 60 second delay between an **IdleSleep** event and the system actually going to sleep.
 
-Logs are written to the following file:
+Also, there is at most a 30 second delay between a **WillSleep** event and the system going to sleep.
 
-	/Library/Logs/com.github.execriez.sleepwarden.log
+You should aim at having all your scripts complete within the appropriate timeframes.
+
+**SleepWarden-IdleSleep**
+
+This script is called when the system is about to sleep due to idleness. 
+
+If the IdleSleep script takes longer than 60 seconds, a system sleep will occur mid-script, and the script will complete after the system next wakes!
+
+After the script completes, a system **WillSleep** event occurs which causes the "SleepWarden-WillSleep" script to run.
+
+	#!/bin/bash
+	#
+	# Idle sleep is about to kick in. 
+	# The system will wait at most 60 seconds then go to sleep.
+	#
+	# Called as root like this:
+	#   SleepWarden-IdleSleep
+
+	# Do something
+	say "Idle Sleep"
+
+**SleepWarden-WillSleep**
+
+This script is called when you select "Sleep" from the Apple menu, and immediately after an **IdleSleep** event completes.
+
+The system will go to sleep 30 seconds after the **WillSleep** event, or 60 seconds after the **IdleSleep** event; whichever comes first.
+
+Some services don't work after a WillSleep event, so you may notice that you never get to hear the "say" command below.
+
+	#!/bin/bash
+	#
+	# System sleep is about to kick in. 
+	# The system will wait at most 30 seconds then go to sleep.
+	#
+	# Called as root like this:
+	#   SleepWarden-WillSleep
+
+	# Do something
+	say "Will Sleep"
+
+**SleepWarden-WillWake**
+
+This script is called when the system has started the wake up process.
+
+	#!/bin/bash
+	#
+	# The system has started the wake up process
+	#
+	# Called as root like this:
+	#   SleepWarden-WillWake
+
+	# Do something
+	say "Will Wake"
+
+**SleepWarden-HasWoken**
+
+This script is called when the system has finished waking up.
+
+	#!/bin/bash
+	#
+	# The system has finished waking up
+	#
+	# Called as root like this:
+	#   SleepWarden-HasWoken
+
+	# Do something
+	say "Has Woken"
+
 
 ## How to uninstall:
 
-To uninstall you should double-click the following uninstaller package which can be found in the "SupportFiles" directory.
+Download the SleepWarden uninstaller package here [SleepWarden-Uninstaller.pkg](https://raw.githubusercontent.com/execriez/SleepWarden/master/SupportFiles/SleepWarden-Uninstaller.pkg)
 
-	SleepWarden-Uninstaller.pkg
-	
-If the uninstaller package isn't available, you can uninstall from a shell by typing the following:
-
-	sudo /usr/local/SleepWarden/util/Uninstall
-
-The uninstaller will uninstall the following files and directories:
+The uninstaller will remove the following files and directories:
 
 	/Library/LaunchDaemons/com.github.execriez.sleepwarden.plist
 	/usr/SleepWarden/
 
+After the uninstall everything goes back to normal, and sleep events will not be tracked.
+
 There's no need to reboot.
 
-After the uninstall everything goes back to normal.
+## Logs:
+
+The SleepWarden binary writes to the following log file:
+
+	/var/log/systemlog
+  
+The following is an example of a typical system log file entry:
+
+	Sep 29 14:28:55 mymac-01 SleepWarden[69960]: SystemIdleSleep
+	Sep 29 14:28:56 mymac-01 SleepWarden[69960]: SystemWillSleep
+	Sep 29 14:31:21 mymac-01 SleepWarden[69960]: SystemWillWake
+	Sep 29 14:31:26 mymac-01 SleepWarden[69960]: SystemHasWoken
+
+The installer writes to the following log file:
+
+	/Library/Logs/com.github.execriez.sleepwarden.log
+  
+You should check this log if there are issues when installing.
 
 ## History:
+
+1.0.6 - 03 OCT 2018
+
+* Network events no longer wait for earlier events to finish before running. Events can now be running simultaneously.
+
+* The example scripts have been simplified, and the readme has been improved.
+
+1.0.5 - 29 SEP 2018
+
+* The example scripts have been simplified, and the readme has been improved.
 
 1.0.4 - 11 OCT 2017
 

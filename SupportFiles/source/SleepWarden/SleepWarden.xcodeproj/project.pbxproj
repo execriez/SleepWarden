@@ -7,11 +7,11 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		72E7FA491F7D855F00AE0317 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 72E7FA481F7D855F00AE0317 /* main.m */; };
+		727FE5E8215FD3270025C6C7 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 727FE5E7215FD3270025C6C7 /* main.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
-		72E7FA431F7D855F00AE0317 /* CopyFiles */ = {
+		727FE5E2215FD3270025C6C7 /* CopyFiles */ = {
 			isa = PBXCopyFilesBuildPhase;
 			buildActionMask = 2147483647;
 			dstPath = /usr/share/man/man1/;
@@ -23,12 +23,12 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
-		72E7FA451F7D855F00AE0317 /* SleepWarden */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = SleepWarden; sourceTree = BUILT_PRODUCTS_DIR; };
-		72E7FA481F7D855F00AE0317 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		727FE5E4215FD3270025C6C7 /* SleepWarden */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = SleepWarden; sourceTree = BUILT_PRODUCTS_DIR; };
+		727FE5E7215FD3270025C6C7 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
-		72E7FA421F7D855F00AE0317 /* Frameworks */ = {
+		727FE5E1215FD3270025C6C7 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -38,26 +38,26 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		72E7FA3C1F7D855E00AE0317 = {
+		727FE5DB215FD3270025C6C7 = {
 			isa = PBXGroup;
 			children = (
-				72E7FA471F7D855F00AE0317 /* SleepWarden */,
-				72E7FA461F7D855F00AE0317 /* Products */,
+				727FE5E6215FD3270025C6C7 /* SleepWarden */,
+				727FE5E5215FD3270025C6C7 /* Products */,
 			);
 			sourceTree = "<group>";
 		};
-		72E7FA461F7D855F00AE0317 /* Products */ = {
+		727FE5E5215FD3270025C6C7 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				72E7FA451F7D855F00AE0317 /* SleepWarden */,
+				727FE5E4215FD3270025C6C7 /* SleepWarden */,
 			);
 			name = Products;
 			sourceTree = "<group>";
 		};
-		72E7FA471F7D855F00AE0317 /* SleepWarden */ = {
+		727FE5E6215FD3270025C6C7 /* SleepWarden */ = {
 			isa = PBXGroup;
 			children = (
-				72E7FA481F7D855F00AE0317 /* main.m */,
+				727FE5E7215FD3270025C6C7 /* main.m */,
 			);
 			path = SleepWarden;
 			sourceTree = "<group>";
@@ -65,13 +65,13 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		72E7FA441F7D855F00AE0317 /* SleepWarden */ = {
+		727FE5E3215FD3270025C6C7 /* SleepWarden */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 72E7FA4C1F7D855F00AE0317 /* Build configuration list for PBXNativeTarget "SleepWarden" */;
+			buildConfigurationList = 727FE5EB215FD3270025C6C7 /* Build configuration list for PBXNativeTarget "SleepWarden" */;
 			buildPhases = (
-				72E7FA411F7D855F00AE0317 /* Sources */,
-				72E7FA421F7D855F00AE0317 /* Frameworks */,
-				72E7FA431F7D855F00AE0317 /* CopyFiles */,
+				727FE5E0215FD3270025C6C7 /* Sources */,
+				727FE5E1215FD3270025C6C7 /* Frameworks */,
+				727FE5E2215FD3270025C6C7 /* CopyFiles */,
 			);
 			buildRules = (
 			);
@@ -79,53 +79,54 @@
 			);
 			name = SleepWarden;
 			productName = SleepWarden;
-			productReference = 72E7FA451F7D855F00AE0317 /* SleepWarden */;
+			productReference = 727FE5E4215FD3270025C6C7 /* SleepWarden */;
 			productType = "com.apple.product-type.tool";
 		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
-		72E7FA3D1F7D855E00AE0317 /* Project object */ = {
+		727FE5DC215FD3270025C6C7 /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
-				LastUpgradeCheck = 0730;
+				LastUpgradeCheck = 0820;
 				ORGANIZATIONNAME = "Mark Swift";
 				TargetAttributes = {
-					72E7FA441F7D855F00AE0317 = {
-						CreatedOnToolsVersion = 7.3.1;
+					727FE5E3215FD3270025C6C7 = {
+						CreatedOnToolsVersion = 8.2.1;
+						ProvisioningStyle = Automatic;
 					};
 				};
 			};
-			buildConfigurationList = 72E7FA401F7D855F00AE0317 /* Build configuration list for PBXProject "SleepWarden" */;
+			buildConfigurationList = 727FE5DF215FD3270025C6C7 /* Build configuration list for PBXProject "SleepWarden" */;
 			compatibilityVersion = "Xcode 3.2";
 			developmentRegion = English;
 			hasScannedForEncodings = 0;
 			knownRegions = (
 				en,
 			);
-			mainGroup = 72E7FA3C1F7D855E00AE0317;
-			productRefGroup = 72E7FA461F7D855F00AE0317 /* Products */;
+			mainGroup = 727FE5DB215FD3270025C6C7;
+			productRefGroup = 727FE5E5215FD3270025C6C7 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				72E7FA441F7D855F00AE0317 /* SleepWarden */,
+				727FE5E3215FD3270025C6C7 /* SleepWarden */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXSourcesBuildPhase section */
-		72E7FA411F7D855F00AE0317 /* Sources */ = {
+		727FE5E0215FD3270025C6C7 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				72E7FA491F7D855F00AE0317 /* main.m in Sources */,
+				727FE5E8215FD3270025C6C7 /* main.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin XCBuildConfiguration section */
-		72E7FA4A1F7D855F00AE0317 /* Debug */ = {
+		727FE5E9215FD3270025C6C7 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
@@ -137,10 +138,13 @@
 				CLANG_WARN_BOOL_CONVERSION = YES;
 				CLANG_WARN_CONSTANT_CONVERSION = YES;
 				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
 				CLANG_WARN_EMPTY_BODY = YES;
 				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
 				CODE_SIGN_IDENTITY = "-";
@@ -169,7 +173,7 @@
 			};
 			name = Debug;
 		};
-		72E7FA4B1F7D855F00AE0317 /* Release */ = {
+		727FE5EA215FD3270025C6C7 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
@@ -181,10 +185,13 @@
 				CLANG_WARN_BOOL_CONVERSION = YES;
 				CLANG_WARN_CONSTANT_CONVERSION = YES;
 				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
 				CLANG_WARN_EMPTY_BODY = YES;
 				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
 				CODE_SIGN_IDENTITY = "-";
@@ -206,16 +213,18 @@
 			};
 			name = Release;
 		};
-		72E7FA4D1F7D855F00AE0317 /* Debug */ = {
+		727FE5EC215FD3270025C6C7 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				MACOSX_DEPLOYMENT_TARGET = 10.7;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
 			name = Debug;
 		};
-		72E7FA4E1F7D855F00AE0317 /* Release */ = {
+		727FE5ED215FD3270025C6C7 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				MACOSX_DEPLOYMENT_TARGET = 10.7;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
 			name = Release;
@@ -223,24 +232,24 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		72E7FA401F7D855F00AE0317 /* Build configuration list for PBXProject "SleepWarden" */ = {
+		727FE5DF215FD3270025C6C7 /* Build configuration list for PBXProject "SleepWarden" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				72E7FA4A1F7D855F00AE0317 /* Debug */,
-				72E7FA4B1F7D855F00AE0317 /* Release */,
+				727FE5E9215FD3270025C6C7 /* Debug */,
+				727FE5EA215FD3270025C6C7 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		72E7FA4C1F7D855F00AE0317 /* Build configuration list for PBXNativeTarget "SleepWarden" */ = {
+		727FE5EB215FD3270025C6C7 /* Build configuration list for PBXNativeTarget "SleepWarden" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				72E7FA4D1F7D855F00AE0317 /* Debug */,
-				72E7FA4E1F7D855F00AE0317 /* Release */,
+				727FE5EC215FD3270025C6C7 /* Debug */,
+				727FE5ED215FD3270025C6C7 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 		};
 /* End XCConfigurationList section */
 	};
-	rootObject = 72E7FA3D1F7D855E00AE0317 /* Project object */;
+	rootObject = 727FE5DC215FD3270025C6C7 /* Project object */;
 }

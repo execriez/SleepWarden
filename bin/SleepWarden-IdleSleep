@@ -1,37 +1,10 @@
 #!/bin/bash
 #
-# Short:    Do something when system is about to sleep because of idleness
-# Author:   Mark J Swift
-# Version:  1.0.4
-# Modified: 01-Jun-2017
+# Idle sleep is about to kick in. 
+# The system will wait at most 60 seconds then go to sleep.
 #
-# Called by SleepWarden as follows:    
+# Called as root like this:
 #   SleepWarden-IdleSleep
 
-# ---
-
-# assume that all scripts are in a subdirectory off the main project directory
-GLB_sv_ProjectDirPath="$(dirname $(dirname ${0}))"
-
-# Include the CommonLib
-. "${GLB_sv_ProjectDirPath}/inc/Common.sh"
-
-# Exit if something went wrong unexpectedly
-if test -z "${GLB_sv_ProjectName}"
-then
-  exit 90
-fi
-
-# ---
-
-GLB_nf_logmessage ${GLB_iv_MsgLevelNotice} "Idle Sleep"
-
+# Do something
 say "Idle Sleep"
-
-for (( iv_LoopCount=0; iv_LoopCount<10; iv_LoopCount++ ))
-do
-  sleep 1
-  GLB_nf_logmessage ${GLB_iv_MsgLevelNotice} "Sleep ${iv_LoopCount}"
-  say "${iv_LoopCount}"
-done
-
