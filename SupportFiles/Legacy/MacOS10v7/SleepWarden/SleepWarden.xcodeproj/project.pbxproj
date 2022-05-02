@@ -7,11 +7,11 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		723CF64A281FD8B300F08060 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 723CF649281FD8B300F08060 /* main.m */; };
+		7247ABCF281F572F00B69D0B /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 7247ABCE281F572F00B69D0B /* main.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
-		727FE5E2215FD3270025C6C7 /* CopyFiles */ = {
+		7247ABC9281F572F00B69D0B /* CopyFiles */ = {
 			isa = PBXCopyFilesBuildPhase;
 			buildActionMask = 2147483647;
 			dstPath = /usr/share/man/man1/;
@@ -23,12 +23,12 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
-		723CF649281FD8B300F08060 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; name = main.m; path = SleepWarden/main.m; sourceTree = "<group>"; };
-		727FE5E4215FD3270025C6C7 /* SleepWarden */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = SleepWarden; sourceTree = BUILT_PRODUCTS_DIR; };
+		7247ABCB281F572F00B69D0B /* SleepWarden */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = SleepWarden; sourceTree = BUILT_PRODUCTS_DIR; };
+		7247ABCE281F572F00B69D0B /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
-		727FE5E1215FD3270025C6C7 /* Frameworks */ = {
+		7247ABC8281F572F00B69D0B /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -38,32 +38,40 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		727FE5DB215FD3270025C6C7 = {
+		7247ABC2281F572F00B69D0B = {
 			isa = PBXGroup;
 			children = (
-				723CF649281FD8B300F08060 /* main.m */,
-				727FE5E5215FD3270025C6C7 /* Products */,
+				7247ABCD281F572F00B69D0B /* SleepWarden */,
+				7247ABCC281F572F00B69D0B /* Products */,
 			);
 			sourceTree = "<group>";
 		};
-		727FE5E5215FD3270025C6C7 /* Products */ = {
+		7247ABCC281F572F00B69D0B /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				727FE5E4215FD3270025C6C7 /* SleepWarden */,
+				7247ABCB281F572F00B69D0B /* SleepWarden */,
 			);
 			name = Products;
+			sourceTree = "<group>";
+		};
+		7247ABCD281F572F00B69D0B /* SleepWarden */ = {
+			isa = PBXGroup;
+			children = (
+				7247ABCE281F572F00B69D0B /* main.m */,
+			);
+			path = SleepWarden;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		727FE5E3215FD3270025C6C7 /* SleepWarden */ = {
+		7247ABCA281F572F00B69D0B /* SleepWarden */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 727FE5EB215FD3270025C6C7 /* Build configuration list for PBXNativeTarget "SleepWarden" */;
+			buildConfigurationList = 7247ABD2281F572F00B69D0B /* Build configuration list for PBXNativeTarget "SleepWarden" */;
 			buildPhases = (
-				727FE5E0215FD3270025C6C7 /* Sources */,
-				727FE5E1215FD3270025C6C7 /* Frameworks */,
-				727FE5E2215FD3270025C6C7 /* CopyFiles */,
+				7247ABC7281F572F00B69D0B /* Sources */,
+				7247ABC8281F572F00B69D0B /* Frameworks */,
+				7247ABC9281F572F00B69D0B /* CopyFiles */,
 			);
 			buildRules = (
 			);
@@ -71,82 +79,71 @@
 			);
 			name = SleepWarden;
 			productName = SleepWarden;
-			productReference = 727FE5E4215FD3270025C6C7 /* SleepWarden */;
+			productReference = 7247ABCB281F572F00B69D0B /* SleepWarden */;
 			productType = "com.apple.product-type.tool";
 		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
-		727FE5DC215FD3270025C6C7 /* Project object */ = {
+		7247ABC3281F572F00B69D0B /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
-				LastUpgradeCheck = 1330;
+				LastUpgradeCheck = 0820;
 				ORGANIZATIONNAME = "Mark Swift";
 				TargetAttributes = {
-					727FE5E3215FD3270025C6C7 = {
+					7247ABCA281F572F00B69D0B = {
 						CreatedOnToolsVersion = 8.2.1;
 						ProvisioningStyle = Automatic;
 					};
 				};
 			};
-			buildConfigurationList = 727FE5DF215FD3270025C6C7 /* Build configuration list for PBXProject "SleepWarden" */;
+			buildConfigurationList = 7247ABC6281F572F00B69D0B /* Build configuration list for PBXProject "SleepWarden" */;
 			compatibilityVersion = "Xcode 3.2";
-			developmentRegion = en;
+			developmentRegion = English;
 			hasScannedForEncodings = 0;
 			knownRegions = (
 				en,
-				Base,
 			);
-			mainGroup = 727FE5DB215FD3270025C6C7;
-			productRefGroup = 727FE5E5215FD3270025C6C7 /* Products */;
+			mainGroup = 7247ABC2281F572F00B69D0B;
+			productRefGroup = 7247ABCC281F572F00B69D0B /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				727FE5E3215FD3270025C6C7 /* SleepWarden */,
+				7247ABCA281F572F00B69D0B /* SleepWarden */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXSourcesBuildPhase section */
-		727FE5E0215FD3270025C6C7 /* Sources */ = {
+		7247ABC7281F572F00B69D0B /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				723CF64A281FD8B300F08060 /* main.m in Sources */,
+				7247ABCF281F572F00B69D0B /* main.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin XCBuildConfiguration section */
-		727FE5E9215FD3270025C6C7 /* Debug */ = {
+		7247ABD0281F572F00B69D0B /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
-				CLANG_ANALYZER_LOCALIZABILITY_NONLOCALIZED = YES;
 				CLANG_ANALYZER_NONNULL = YES;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
 				CLANG_CXX_LIBRARY = "libc++";
 				CLANG_ENABLE_MODULES = YES;
 				CLANG_ENABLE_OBJC_ARC = YES;
-				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
 				CLANG_WARN_BOOL_CONVERSION = YES;
-				CLANG_WARN_COMMA = YES;
 				CLANG_WARN_CONSTANT_CONVERSION = YES;
-				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
 				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
 				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
 				CLANG_WARN_EMPTY_BODY = YES;
 				CLANG_WARN_ENUM_CONVERSION = YES;
 				CLANG_WARN_INFINITE_RECURSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
-				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
-				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
-				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
-				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
-				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
-				CLANG_WARN_STRICT_PROTOTYPES = YES;
 				CLANG_WARN_SUSPICIOUS_MOVE = YES;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
@@ -176,34 +173,24 @@
 			};
 			name = Debug;
 		};
-		727FE5EA215FD3270025C6C7 /* Release */ = {
+		7247ABD1281F572F00B69D0B /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
-				CLANG_ANALYZER_LOCALIZABILITY_NONLOCALIZED = YES;
 				CLANG_ANALYZER_NONNULL = YES;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
 				CLANG_CXX_LIBRARY = "libc++";
 				CLANG_ENABLE_MODULES = YES;
 				CLANG_ENABLE_OBJC_ARC = YES;
-				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
 				CLANG_WARN_BOOL_CONVERSION = YES;
-				CLANG_WARN_COMMA = YES;
 				CLANG_WARN_CONSTANT_CONVERSION = YES;
-				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
 				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
 				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
 				CLANG_WARN_EMPTY_BODY = YES;
 				CLANG_WARN_ENUM_CONVERSION = YES;
 				CLANG_WARN_INFINITE_RECURSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
-				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
-				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
-				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
-				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
-				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
-				CLANG_WARN_STRICT_PROTOTYPES = YES;
 				CLANG_WARN_SUSPICIOUS_MOVE = YES;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
@@ -226,20 +213,20 @@
 			};
 			name = Release;
 		};
-		727FE5EC215FD3270025C6C7 /* Debug */ = {
+		7247ABD3281F572F00B69D0B /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				CODE_SIGN_IDENTITY = "-";
-				MACOSX_DEPLOYMENT_TARGET = 10.9;
+				ARCHS = "$(ARCHS_STANDARD_32_64_BIT)";
+				MACOSX_DEPLOYMENT_TARGET = 10.7;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
 			name = Debug;
 		};
-		727FE5ED215FD3270025C6C7 /* Release */ = {
+		7247ABD4281F572F00B69D0B /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				CODE_SIGN_IDENTITY = "-";
-				MACOSX_DEPLOYMENT_TARGET = 10.9;
+				ARCHS = "$(ARCHS_STANDARD_32_64_BIT)";
+				MACOSX_DEPLOYMENT_TARGET = 10.7;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
 			name = Release;
@@ -247,25 +234,24 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		727FE5DF215FD3270025C6C7 /* Build configuration list for PBXProject "SleepWarden" */ = {
+		7247ABC6281F572F00B69D0B /* Build configuration list for PBXProject "SleepWarden" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				727FE5E9215FD3270025C6C7 /* Debug */,
-				727FE5EA215FD3270025C6C7 /* Release */,
+				7247ABD0281F572F00B69D0B /* Debug */,
+				7247ABD1281F572F00B69D0B /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		727FE5EB215FD3270025C6C7 /* Build configuration list for PBXNativeTarget "SleepWarden" */ = {
+		7247ABD2281F572F00B69D0B /* Build configuration list for PBXNativeTarget "SleepWarden" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				727FE5EC215FD3270025C6C7 /* Debug */,
-				727FE5ED215FD3270025C6C7 /* Release */,
+				7247ABD3281F572F00B69D0B /* Debug */,
+				7247ABD4281F572F00B69D0B /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
-	rootObject = 727FE5DC215FD3270025C6C7 /* Project object */;
+	rootObject = 7247ABC3281F572F00B69D0B /* Project object */;
 }

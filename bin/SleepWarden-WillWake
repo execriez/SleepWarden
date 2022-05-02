@@ -5,5 +5,5 @@
 # Called as root like this:
 #   SleepWarden-WillWake
 
-# Do something
-say "Will Wake"
+# Do Something
+echo "$(date '+%d %b %Y %H:%M:%S %Z') WillWake - system is about to wake from sleep" >> /tmp/SleepWarden.log

@@ -5,5 +5,5 @@
 # Called as root like this:
 #   SleepWarden-HasWoken
 
-# Do something
-say "Has Woken"
+# Do Something
+echo "$(date '+%d %b %Y %H:%M:%S %Z') HasWoken - system has just woken from sleep" >> /tmp/SleepWarden.log

@@ -6,5 +6,5 @@
 # Called as root like this:
 #   SleepWarden-IdleSleep
 
-# Do something
-say "Idle Sleep"
+# Do Something
+echo "$(date '+%d %b %Y %H:%M:%S %Z') IdleSleep - system is about to go to sleep due to idleness" >> /tmp/SleepWarden.log
